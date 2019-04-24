@@ -39,10 +39,10 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: home,
-      redirect: '/indexhome',
+      redirect: '/home/indexhome',
       children: [
         {
-          path: '/indexhome',
+          path: 'indexhome',
           name: 'indexhome',
           component: indexhome,
           meta: {
@@ -51,7 +51,7 @@ export default new Router({
           }
         },
         {
-          path: '/topUp',
+          path: 'topUp',
           name: 'topUp',
           component: topUp,
           meta: {
@@ -60,7 +60,7 @@ export default new Router({
           }
         },
         {
-          path: '/activity',
+          path: 'activity',
           name: 'activity',
           component: activity,
           meta: {
@@ -69,7 +69,7 @@ export default new Router({
           }
         },
         {
-          path: '/personal',
+          path: 'personal',
           name: 'personal',
           component: personal,
           meta: {

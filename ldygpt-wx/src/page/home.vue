@@ -34,7 +34,7 @@ export default {
         {
           title: '首页',
           index: 0,
-          url: '/indexhome',
+          url: '/home/indexhome',
           icon: {
             normal: require('../assets/images/menu_home_normal@2x.png'),
             active: require('../assets/images/menu_home_selected@2x.png')
@@ -43,7 +43,7 @@ export default {
         {
           title: '就餐',
           index: 1,
-          url: '/topUp',
+          url: '/home/topUp',
           icon: {
             normal: require('../assets/images/menu_food_normal@2x.png'),
             active: require('../assets/images/menu_food_selected@2x.png')
@@ -52,7 +52,7 @@ export default {
         {
           title: '活动',
           index: 2,
-          url: '/activity',
+          url: '/home/activity',
           icon: {
             normal: require('../assets/images/menu_activity_normal@2x.png'),
             active: require('../assets/images/menu_activity_selected@2x.png')
@@ -61,7 +61,7 @@ export default {
         {
           title: '我的',
           index: 3,
-          url: '/personal',
+          url: '/home/personal',
           icon: {
             normal: require('../assets/images/menu_user_normal@2x.png'),
             active: require('../assets/images/menu_user_selected02@2x.png')
@@ -79,6 +79,21 @@ export default {
   //     }
   //   }
   // },
+  watch: {
+    '$route' (to, from) {
+      console.log('888888888888888', to, from)
+      if (to.name === 'indexhome') {
+        console.log('active11111111111')
+        this.active = 0
+      } else if (to.name === 'topUp') {
+        this.active = 1
+      } else if (to.name === 'activity') {
+        this.active = 2
+      } else if (to.name === 'personal') {
+        this.active = 3
+      }
+    }
+  },
   mounted () {
     this.confirmPath()
     console.log('当前页面路由')
